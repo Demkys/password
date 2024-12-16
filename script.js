@@ -39,4 +39,3 @@ function copyToClipboard() {
   document.execCommand('copy');
   alert('Пароль скопирован в буфер обмена!');
 }
-
