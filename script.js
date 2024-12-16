@@ -38,13 +38,23 @@ function copyToClipboard() {
   passwordField.select();
   document.execCommand('copy');
   
-  // Добавим фишку: анимация кнопки при копировании
-  const copyButton = document.getElementById('copyBtn');
-  copyButton.classList.add('copied');
-
+  // Показываем уведомление при копировании
+  const toast = document.getElementById('toast');
+  toast.classList.add('visible');
   setTimeout(() => {
-    copyButton.classList.remove('copied');
-  }, 500);
-
-  alert('Пароль скопирован в буфер обмена!');
+    toast.classList.remove('visible');
+  }, 2000);
 }
+
+// Блокируем выделение текста и контекстное меню
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
+});
+
+document.querySelectorAll('*').forEach(element => {
+  element.addEventListener('mousedown', (event) => {
+    if (event.button === 2) { // Правая кнопка мыши
+      event.preventDefault();
+    }
+  });
+});
