@@ -1,218 +1,285 @@
 /* Общие стили */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #121212;
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-  }
-  
-  .container {
-    background: #1e1e1e;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 480px;
-    text-align: center;
-    animation: fadeIn 1s ease-out;
-  }
-  
-  h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ff4081;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    animation: slideIn 0.7s ease-out;
-  }
-  
-  /* Опции */
-  .options {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 12px;
-    text-align: left;
-    color: #ddd;
-    font-weight: 500;
-  }
-  
-  /* Изменение внешнего вида числа */
-  .password-length {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #444;
-    background: #333;
-    color: #fff;
-    outline: none;
-    transition: all 0.3s ease;
-    appearance: none;
-  }
-  
-  .password-length:focus {
-    border-color: #ff4081;
-  }
-  
-  .password-length::-webkit-outer-spin-button,
-  .password-length::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  /* Чекбоксы */
-  .checkboxes {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .checkboxes label {
-    font-size: 16px;
-    color: #ccc;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .checkboxes input {
-    margin-right: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .checkboxes input:checked {
-    background-color: #ff4081;
-    border-color: #ff4081;
-  }
-  
-  /* Кнопка генерации */
-  button {
-    background: linear-gradient(135deg, #ff4081, #ff80ab);
-    color: #fff;
-    padding: 14px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-    user-select: none; /* Запрещаем выделение текста на кнопках */
-  }
-  
-  button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  button:active {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Результат */
-  .result {
-    display: flex;
-    align-items: center; /* Чтобы выровнять элементы по вертикали */
-    gap: 10px;
-    margin-top: 30px;
-  }
-  
-  .result input {
-    flex-grow: 1;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #444;
-    background-color: #333;
-    color: #fff;
-    user-select: none; /* Запрещаем выделение текста */
-  }
-  
-  .result button {
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: #444;
-    color: #fff;
-    cursor: pointer;
-    user-select: none; /* Запрещаем выделение текста */
-    height: 100%; /* Подгонка высоты */
-  }
-  
-  /* Анимация для появления */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  /* Анимация для текста заголовка */
-  @keyframes slideIn {
-    0% {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Анимация для уведомления */
-  @keyframes toast {
-    0% {
-      opacity: 0;
-      bottom: 30px;
-    }
-    100% {
-      opacity: 1;
-      bottom: 60px;
-    }
-  }
-  
-  .toast {
-    position: fixed;
-    left: 50%;
-    bottom: -30px;
-    transform: translateX(-50%);
-    background-color: #28a745;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  background: #1e1e1e;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff4081;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  animation: slideIn 0.7s ease-out;
+}
+
+/* Опции */
+.options {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-align: left;
+  color: #ddd;
+  font-weight: 500;
+}
+
+/* Изменение внешнего вида числа */
+.password-length {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+}
+
+.password-length:focus {
+  border-color: #ff4081;
+}
+
+.password-length::-webkit-outer-spin-button,
+.password-length::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Чекбоксы */
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.checkboxes label {
+  font-size: 16px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkboxes input {
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkboxes input:checked {
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+
+/* Кнопка генерации */
+button {
+  background: linear-gradient(135deg, #ff4081, #ff80ab);
+  color: #fff;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  user-select: none; /* Запрещаем выделение текста на кнопках */
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Результат */
+.result {
+  display: flex;
+  align-items: center; /* Чтобы выровнять элементы по вертикали */
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.result input {
+  flex-grow: 1;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+  user-select: none; /* Запрещаем выделение текста */
+}
+
+.result button {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  user-select: none; /* Запрещаем выделение текста */
+  height: 100%; /* Подгонка высоты */
+}
+
+/* Анимация для появления */
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    transition: all 0.3s ease;
   }
-  
-  .toast.visible {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Анимация для текста заголовка */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Анимация для уведомления */
+@keyframes toast {
+  0% {
+    opacity: 0;
+    bottom: 30px;
+  }
+  100% {
     opacity: 1;
     bottom: 60px;
   }
-  
-  .toast.hidden {
-    display: none;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toast.visible {
+  opacity: 1;
+  bottom: 60px;
+}
+
+.toast.hidden {
+  display: none;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
   }
-  
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  .password-length {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .result input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .result button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .checkboxes label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .password-length,
+  .result input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .result button,
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .checkboxes label {
+    font-size: 12px;
+  }
+}
