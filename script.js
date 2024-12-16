@@ -37,5 +37,14 @@ function copyToClipboard() {
   const passwordField = document.getElementById('password');
   passwordField.select();
   document.execCommand('copy');
+  
+  // Добавим фишку: анимация кнопки при копировании
+  const copyButton = document.getElementById('copyBtn');
+  copyButton.classList.add('copied');
+
+  setTimeout(() => {
+    copyButton.classList.remove('copied');
+  }, 500);
+
   alert('Пароль скопирован в буфер обмена!');
 }
